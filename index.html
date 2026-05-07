@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mito e Filosofia</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- TELA INICIAL -->
+<div id="inicio">
+  <div class="titulo" onclick="abrirMapa()">
+    MITO & FILOSOFIA
+    <p class="clique">Clique para começar</p>
+  </div>
+</div>
+
+<!-- MAPA MENTAL -->
+<section id="mapa" style="display: none;">
+
+  <div class="topoQuiz">
+    <button class="botaoQuiz" onclick="abrirQuiz()">
+      TESTAR SEUS CONHECIMENTOS
+    </button>
+  </div>
+
+  <div class="centro">MITO & FILOSOFIA</div>
+
+  <!-- TÓPICOS -->
+  <button class="topico t1" onclick="abrirModal('Origem do Mito')">Origem do Mito</button>
+  <button class="topico t2" onclick="abrirModal('Origem da Filosofia')">Origem da Filosofia</button>
+  <button class="topico t3" onclick="abrirModal('O que é Mito')">O que é Mito</button>
+  <button class="topico t4" onclick="abrirModal('O que é Filosofia')">O que é Filosofia</button>
+  <button class="topico t5" onclick="abrirModal('Diferença entre os dois')">Diferença entre os dois</button>
+  <button class="topico t6" onclick="abrirModal('Principais Filósofos')">Principais Filósofos</button>
+  <button class="topico t7" onclick="abrirModal('Mito → Logos')">Mito → Logos</button>
+  <button class="topico t8" onclick="abrirModal('Importância da Filosofia')">Importância da Filosofia</button>
+
+  <!-- FOTOS -->
+  <button class="topico t9" onclick="abrirModal('Fotos Filosofia')">Fotos da Filosofia</button>
+  <button class="topico t10" onclick="abrirModal('Fotos Mitologia')">Fotos da Mitologia</button>
+
+  <!-- VÍDEO -->
+  <div class="videoComplementar">
+    <button class="botaoVideo" onclick="abrirVideo()">
+      🎬 Vídeo complementar (opcional)
+    </button>
+  </div>
+
+</section>
+
+<!-- MODAL -->
+<div id="modal" class="modal" style="display: none;">
+  <div class="modal-box">
+    <span class="fechar" onclick="fecharModal()">✖</span>
+    <div id="conteudo"></div>
+  </div>
+</div>
+
+<!-- MODAL DO VÍDEO -->
+<div id="modalVideo" class="modal" style="display: none;">
+  <div class="modal-box">
+    <span class="fechar" onclick="fecharVideo()">✖</span>
+
+    <h2>Vídeo complementar</h2>
+
+    <video controls width="100%">
+      <source src="imagens/video.mp4" type="video/mp4">
+      Seu navegador não suporta vídeo.
+    </video>
+
+  </div>
+</div>
+
+<!-- QUIZ -->
+<section id="quiz" style="display: none;">
+  <div class="quiz-container">
+
+    <h2>Teste seus conhecimentos</h2>
+
+    <div class="barraProgresso">
+      <div id="progresso"></div>
+    </div>
+
+    <div id="pergunta"></div>
+    <div id="respostas"></div>
+
+    <button id="proxima" onclick="proximaPergunta()">
+      Próxima pergunta
+    </button>
+
+  </div>
+</section>
+
+<!-- JS -->
+<script src="script.js"></script>
+<script src="quiz.js"></script>
+
+</body>
+</html>
